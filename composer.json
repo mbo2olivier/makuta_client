@@ -1,0 +1,11 @@
+{
+    "name": "mbo2olivier/makuta_client",
+    "description": "Client PHP pour e-Makuta. Permet d'intégrer le système de paiement e-Makuta àson site web en PHP",
+    "authors": [
+        {
+            "name": "mbo2olivier",
+            "email": "mbo2olivier@gmail.com"
+        }
+    ],
+    "require": {}
+}
