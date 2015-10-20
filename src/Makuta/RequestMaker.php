@@ -9,7 +9,6 @@ abstract class RequestMaker
 	protected $id;
 	protected $secret;
 
-	
 	function __construct($id, $secret)
 	{
 		$this->id = $id;
