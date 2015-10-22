@@ -15,5 +15,10 @@ abstract class RequestMaker
 		$this->secret = $secret;
 	}
 
-	abstract function submit($params = array());	
+	abstract public function submit($params = array());
+
+	protected function getSignature($data)
+	{
+		return hash_hmac("sha256", $data, $this->secret);
+	}	
 }

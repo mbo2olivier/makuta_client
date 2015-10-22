@@ -14,18 +14,22 @@ class Makuta
 	protected $sender;
 
 	
-	function __construct($id, $secret)
+	function __construct($id, $secret,RequestMaker $method=null)
 	{
 		$this->appID = $id;
 		$this->secret = $secret;
 		$this->parser = new ResponseParser();
-		$this->sender = new RequestMaker($id, $secret);
+		if (!is_null($method)) {
+            $this->sender = $method;
+        } else {
+            $this->sender = new RequestMaker\Curl($id, $secret);
+        }
 	}
 
 	public function openTransaction($montant, $devise, $code, $account = null){
-		$params = array('ACTION' => 'OPEN_TX',
-						'AMOUNT' => $montant,
-						'DEVISE' => $devise,
+		$params = array('ACTION'  => 'OPEN_TX',
+						'AMOUNT'  => $montant,
+						'DEVISE'  => $devise,
 						'TX_CODE' => $code,
 						'ACCOUNT' => $account
 					);
