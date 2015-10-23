@@ -1,13 +1,17 @@
 {
     "name": "mbo2olivier/makuta_client",
-    "description": "Client PHP pour e-Makuta. Permet d'intégrer le système de paiement e-Makuta àson site web en PHP",
+    "description": "PHP Client for e-Makuta ; Client PHP pour e-Makuta. Permet d'intégrer le système de paiement e-Makuta à son site web en PHP",
     "authors": [
         {
-            "name": "mbo2olivier",
-            "email": "mbo2olivier@gmail.com"
+            "name": "Olivier M. Mukadi",
+            "email": "mbo2olivier@gmail.com",
+            "homepage": "http://www.virtualconsultafrica.com"
         }
     ],
-    "require": {},
+    "keywords": ["Partner application", "api", "web service client","mobile payment","m-pesa","e-makuta"],
+    "require": {
+        "php": ">=5.3.2"
+        },
     "autoload": {
         "psr-4": {"Makuta\\": "src/Makuta"}
     }
