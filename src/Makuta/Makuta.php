@@ -26,13 +26,14 @@ class Makuta
         }
 	}
 
-	public function openTransaction($montant, $devise, $code, $account = null){
+	public function openTransaction($montant, $devise, $code, $buyer = null, $account = null){
 		$params = array('ACTION'  => 'OPEN_TX',
 						'AMOUNT'  => $montant,
 						'DEVISE'  => $devise,
-						'TX_CODE' => $code,
-						'ACCOUNT' => $account
+						'TX_CODE' => $code
 					);
+		if(!is_null($buyer)) $params['BUYER']=$buyer;
+		if(!is_null($account)) $params['ACCOUNT']=$account;
 		$response = $this->sender->submit($params);
 		return $this->parser->parse($response);
 	}
